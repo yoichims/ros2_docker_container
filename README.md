@@ -18,6 +18,12 @@ and <https://docs.docker.com/engine/install/linux-postinstall> to be able to use
 make
 ```
 
+To build the image using a different ROS2 distribution e.g. `humble`
+
+```bash
+ROS2_DISTRO=humble make
+```
+
 Build options can be added by specifying `DOCKER_BUILD_OPTS`.
 
 ```bash
@@ -36,6 +42,12 @@ mkdir -p ./ws/src
 
 ```bash
 ./run_container.sh
+```
+
+To use a different ROS2 distribution e.g. `humble`
+
+```bash
+./run_container.sh --distro humble
 ```
 
 * Start the container using `docker compose`
@@ -75,4 +87,8 @@ Only required the first time when starting the container:
 ```bash
 sudo apt-get update
 rosdep update
+```
+
+```bash
+rosdep install -i --from-path src --rosdistro ${ROS_DISTRO} -y
 ```
