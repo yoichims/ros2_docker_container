@@ -2,7 +2,7 @@
 
 ![ci status](https://github.com/f-fl0/ros2_docker_env/workflows/ci/badge.svg)
 
-A simple docker environment to test stuff with ros2 (default `iron`). The workspace is mounted inside the container with
+A simple docker environment to test stuff with ros2 (default `humble`). The workspace is mounted inside the container with
 read/write/execution permission for your user so you can edit files on the host and compile/run inside the container.
 You can install libraries from inside the container using `apt-get` or `pip`. You might need to run `sudo apt-get update`
 the first time. Add dependencies/libraries to the Dockerfile as you need them and build a new image.
@@ -21,7 +21,7 @@ make
 To build the image using a different ROS2 distribution e.g. `humble`
 
 ```bash
-ROS2_DISTRO=humble make
+ROS2_DISTRO=humble DOCKER_BUILD_OPTS="--no-cache" make
 ```
 
 Build options can be added by specifying `DOCKER_BUILD_OPTS`.
