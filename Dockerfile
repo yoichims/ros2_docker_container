@@ -12,6 +12,7 @@ RUN apt-get update \
     build-essential \
     locate \
     nano \
+    emacs \
     python3-colcon-common-extensions \
     python3-pip \
     python3-rosdep \
@@ -34,7 +35,10 @@ RUN apt-get update \
     ros-${ROS_DISTRO}-tf2 \
     ros-${ROS_DISTRO}-tf2-geometry-msgs \
     ros-${ROS_DISTRO}-tf2-sensor-msgs \
+    ros-${ROS_DISTRO}-tf2-eigen \
     ros-${ROS_DISTRO}-v4l2-camera \
+    ros-${ROS_DISTRO}-pcl-ros \
+
   && rm -rf /var/lib/apt/lists/*
 
 ARG USER_ID
